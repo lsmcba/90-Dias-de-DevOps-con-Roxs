@@ -1,15 +1,25 @@
-90-Dias-de-DevOps-con-Roxs
-Semana 1 - Dia 1
-Punto 1
-DevOps es una cultura, una metodología de cómo hacer de forma más ordenada, rápida y con mayor calidad. Yo ya conocia todas las herramientas nombradas, aunque sé que constantemente se van publicando nuevas herramientas, mientras otras quedan obsoletas, así que es importante establecer una conciencia de estudio permanente, esta cultura nunca deja de crecer, siempre seremos alumnos, cometeremos errores, pero prevaleceremos.
+# 90-Dias-de-DevOps-con-Roxs
 
-Punto 2
+## Semana 1 - Dia 1
+
+### <ins> Punto 1 </ins>
+
+***DevOps es una cultura, una metodología de cómo hacer de forma más ordenada, rápida y con mayor calidad. Yo ya conocia todas las herramientas nombradas, aunque sé que constantemente se van publicando nuevas herramientas, mientras otras quedan obsoletas, así que es importante establecer una conciencia de estudio permanente, esta cultura nunca deja de crecer, siempre seremos alumnos, cometeremos errores, pero prevaleceremos.***
+
+
+### <ins> Punto 2 </ins>
+
 Comandos Basicos....
 
+```
 $ whoami
 kali
+```
+```
 $ pwd
 /home/kali
+```
+```
 $ ls -lah
 total 184K
 drwx------ 16 kali kali 4.0K Jun 17 20:39 .
@@ -37,6 +47,8 @@ drwxr-xr-x  2 kali kali 4.0K Jun 17 20:17 Public
 -rw-r--r--  1 kali kali    0 Jun 17 20:17 .sudo_as_admin_successful
 drwxr-xr-x  2 kali kali 4.0K Jun 17 20:17 Templates
 drwxr-xr-x  2 kali kali 4.0K Jun 17 20:17 Videos
+```
+```
 $ mkdir devops-d1
 $ cd devops-d1
 $ echo "Hola DevOps" > hola.txt
@@ -45,9 +57,15 @@ Hola DevOps
 
 $ ls
 hola.txt
-Punto 3
+```
+
+### <ins> Punto 3 </ins>
+
+```
 $ uptime
 20:59:59 up 32 min,  1 user,  load average: 0.11, 0.09, 0.08
+```
+```
 $ top
 top - 21:06:54 up 39 min,  1 user,  load average: 0.00, 0.02, 0.05
 Tasks: 189 total,   1 running, 188 sleeping,   0 stopped,   0 zombie
@@ -89,7 +107,10 @@ MiB Swap:    953.7 total,    953.7 free,      0.0 used.   3063.7 avail Mem
      30 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/2
      31 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/2
      32 root      rt   0       0      0      0 S   0.0   0.0   0:00.55 migration/2
+```
+```
 $ free -h
                total        used        free      shared  buff/cache   available
 Mem:           3.8Gi       855Mi       2.7Gi        17Mi       486Mi       3.0Gi
 Swap:          953Mi          0B       953Mi
+```
