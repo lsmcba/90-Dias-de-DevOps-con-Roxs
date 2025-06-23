@@ -1,1 +1,47 @@
+# 90-Dias-de-DevOps-con-Roxs
 
+## Semana 1 - Dia 3
+
+### <ins> Tarea: Creacion de una VM con Vagrant y levantar una pagina Web con NGINX </ins>
+
+***VagrantFile***
+
+```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/ubuntu2004"
+  config.vm.boot_timeout = 1200
+  config.vm.network "private_network", ip: "192.168.56.101"
+  config.vm.network "forwarded_port", guest: 80, host: 8081
+  config.vm.hostname = "Desafio.90Dias"
+  config.vm.synced_folder ".", "/syncd", disabled: true
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "2048"
+    vb.cpus = 1
+    vb.name = "S1-D3"
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
+    echo "-------------------- Actualizando Paquetes"
+    sudo apt-get update -y
+
+    echo "-------------------- Instalando dependencias y Nginx"
+    sudo apt-get install -y nginx unzip wget
+
+    echo "-------------------- Descargando contenido"
+    wget https://github.com/lsmcba/90-Dias-de-DevOps-con-Roxs/raw/refs/heads/main/Semana%201/Dia%203/Dia3.zip
+
+    echo "-------------------- Descomprimiendo en /var/www/html"
+    sudo unzip Dia3.zip -d /var/www/html
+
+    echo "-------------------- Iniciando Nginx"
+    sudo systemctl start nginx
+  SHELL
+end
+```
+***Imagen de la Pagina Principal***
+
+![S1-D3](Imagen_Pagina_S1D3.png)
