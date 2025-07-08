@@ -1,0 +1,22 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/ubuntu2004"
+  config.vm.boot_timeout = 1200
+  config.vm.network "private_network", ip: "192.168.56.101"
+  config.vm.network "forwarded_port", guest: 80, host: 8081
+  config.vm.hostname = "Desafio.90Dias"
+  config.vm.synced_folder ".", "/syncd", disabled: true
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "2048"
+    vb.cpus = 1
+    vb.name = "S1-D5"
+  end
+
+  config.vm.provision "file", source: "desplegar_app.sh", destination: "/home/vagrant/desplegar_app.sh"
+  config.vm.provision "shell", inline: <<-SHELL
+    chmod +x /home/vagrant/desplegar_app.sh
+    /home/vagrant/desplegar_app.sh
+  SHELL
+end
