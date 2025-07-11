@@ -2,7 +2,7 @@
 
 ## Semana 1 - Dia 3
 
-## 📚 BookLibrary - Despliegue Automático con Vagrant, Gunicorn y Nginx
+## BookLibrary - Despliegue Automático con Vagrant, Gunicorn y Nginx
 
 Proyecto de despliegue automático de una aplicación Flask de gestión de libros, usando:
 - Vagrant
@@ -13,7 +13,7 @@ Proyecto de despliegue automático de una aplicación Flask de gestión de libro
 
 ---
 
-## ✨ Descripción
+## Descripción
 
 Este proyecto crea automáticamente una máquina virtual (Ubuntu 20.04) que:
 - Clona el repositorio `devops-static-web` rama `booklibrary`
@@ -22,6 +22,6 @@ Este proyecto crea automáticamente una máquina virtual (Ubuntu 20.04) que:
 - Levanta Gunicorn como servicio con systemd
 - Configura Nginx para exponer la app en el puerto 80
 
-✅ Todo queda automatizado: solo tenés que hacer `vagrant up` y acceder a la IP que te muestra al finalizar.
+Solo queda levantar una pagina nueva en la maquina host e ingresar a la direccion http://172.0.0.1:8081
 
 ![S1-D5](imagen_dia_5.png)
