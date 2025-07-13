@@ -1,0 +1,17 @@
+---
+- name: Instalar ufw
+  apt:
+    name: ufw
+    state: present
+    update_cache: yes
+
+- name: Permitir puertos definidos
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+  loop: "{{ firewall_allowed_ports }}"
+
+- name: Habilitar UFW con política por defecto de denegar
+  ufw:
+    state: enabled
+    policy: deny

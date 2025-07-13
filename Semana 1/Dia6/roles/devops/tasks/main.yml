@@ -1,0 +1,12 @@
+---
+- name: Crear usuario devops
+  user:
+    name: "{{ devops_user }}"
+    password: "{{ devops_password }}"
+    shell: /bin/bash
+
+- name: Agregar usuario devops a sudoers
+  user:
+    name: "{{ devops_user }}"
+    groups: sudo
+    append: yes

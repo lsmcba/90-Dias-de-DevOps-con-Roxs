@@ -1,0 +1,43 @@
+---
+- name: Instalar unzip
+  apt:
+    name: unzip
+    state: present
+    update_cache: yes
+
+- name: Copiar archivo zip desde carpeta compartida
+  copy:
+    src: /vagrant/web-s1d6.zip
+    dest: /tmp/web-s1d6.zip
+    mode: '0644'
+
+- name: Borrar contenido anterior
+  file:
+    path: /var/www/html
+    state: absent
+
+- name: Crear /var/www/html de nuevo
+  file:
+    path: /var/www/html
+    state: directory
+    mode: '0755'
+
+- name: Descomprimir contenido directamente en /var/www/html
+  unarchive:
+    src: /tmp/web-s1d6.zip
+    dest: /var/www/html
+    remote_src: yes
+    extra_opts: [ "-o" ]
+  notify: Reiniciar nginx
+
+- name: Ajustar permisos
+  file:
+    path: /var/www/html
+    owner: www-data
+    group: www-data
+    recurse: yes
+
+- name: Eliminar archivo temporal
+  file:
+    path: /tmp/web-s1d6.zip
+    state: absent

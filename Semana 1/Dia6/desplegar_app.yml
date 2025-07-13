@@ -1,0 +1,16 @@
+---
+- name: Despliegue de app con Ansible
+  hosts: ansible-hosts
+  become: yes
+
+  vars_files:
+    - group_vars/all.yml
+
+  roles:
+    - nginx
+    - app
+    - devops
+    - firewall
+    - docker
+    - nodejs
+    - python

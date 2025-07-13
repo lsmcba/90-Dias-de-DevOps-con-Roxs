@@ -1,0 +1,28 @@
+---
+- name: Instalar dependencias de Docker
+  apt:
+    name: [apt-transport-https, ca-certificates, curl, software-properties-common]
+    state: present
+    update_cache: yes
+
+- name: Agregar GPG key de Docker
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Agregar repositorio de Docker
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu focal stable
+    state: present
+
+- name: Instalar Docker
+  apt:
+    name: docker-ce
+    state: present
+    update_cache: yes
+
+- name: Asegurar que Docker esté activo
+  service:
+    name: docker
+    state: started
+    enabled: yes

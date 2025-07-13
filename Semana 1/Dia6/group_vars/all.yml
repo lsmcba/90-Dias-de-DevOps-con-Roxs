@@ -1,0 +1,9 @@
+landing_page_content: "<h1>Bienvenido a mi Landing Page personalizada</h1>"
+
+devops_user: devops
+devops_password: '$6$Zrhd9w.../myhashedpassword'  # Usa mkpasswd -m sha-512 'password'
+
+firewall_allowed_ports:
+  - 22
+  - 80
+  - 443
