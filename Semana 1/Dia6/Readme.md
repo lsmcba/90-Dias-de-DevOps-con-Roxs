@@ -38,5 +38,5 @@ Incluye además la creación de un usuario `devops`, reglas de firewall y la ins
     │   └── tasks/main.yml
     └── python/
         └── tasks/main.yml
-
+```
 ![S1-D6](S1D6.png)
